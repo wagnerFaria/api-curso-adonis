@@ -22,6 +22,17 @@ class User extends Model {
   }
 
   /**
+   * Configuração do Adonis ACL
+   * responsavel pelo controle de Roles em conjunto com JWT
+   */
+  static get traits () {
+    return [
+      '@provider:Adonis/Acl/HasRole',
+      '@provider:Adonis/Acl/HasPermission'
+    ]
+  }
+
+  /**
    * A relationship on tokens is required for auth to
    * work. Since features like `refreshTokens` or
    * `rememberToken` will be saved inside the
