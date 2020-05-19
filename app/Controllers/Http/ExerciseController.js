@@ -1,5 +1,6 @@
 'use strict'
 
+const Exercise = use("App/Models/Exercise")
 class ExerciseController {
 
     async index() {
