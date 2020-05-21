@@ -4,6 +4,13 @@
 const Model = use('Model')
 
 class Product extends Model {
+    static get connection() {
+        return 'oldMysql'
+    }
+
+    static get table() {
+        return 'products'
+    }
 }
 
 module.exports = Product

@@ -41,3 +41,5 @@ Route.resource('trainings', 'TrainingController').apiOnly().middleware(['auth:jw
 
 Route.resource('permissions', 'PermissionController').apiOnly().middleware(['auth:jwt', 'is:manager'])
 Route.resource('roles', 'RoleController').apiOnly().middleware(['auth:jwt', 'is:manager'])
+
+Route.get('/products', 'ProductController.index')
