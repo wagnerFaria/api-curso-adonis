@@ -7,7 +7,7 @@ class UserController {
 
     async show({ params }) {
         const user = await User.findOrFail(params.id)
-        await user.load('typeUser')
+        await user.loadMany(['typeUser', 'permissions', 'roles'])
         return user
     }
     async update({ params, request }) {
@@ -31,7 +31,7 @@ class UserController {
         if (roles) {
             await user.roles().sync(roles)
         }
-        
+
         await user.loadMany(['roles', 'permissions'])
         return user
     }
