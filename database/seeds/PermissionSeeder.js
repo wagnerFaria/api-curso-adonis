@@ -2,7 +2,7 @@
 
 /*
 |--------------------------------------------------------------------------
-| TypeUserSeeder
+| PermissionSeeder
 |--------------------------------------------------------------------------
 |
 | Make use of the Factory instance to seed database with dummy data or
@@ -11,24 +11,11 @@
 */
 
 /** @type {import('@adonisjs/lucid/src/Factory')} */
-const Database = use('Database')
+const Factory = use('Factory')
 
-class TypeUserSeeder {
+class PermissionSeeder {
   async run () {
-    await Database.table('type_users').insert(
-      [
-        {
-          name: 'Administrador'
-        },
-        {
-          name: 'Colaborador'
-        },
-        {
-          name: 'Cliente'
-        }
-      ]
-    )
   }
 }
 
-module.exports = TypeUserSeeder
+module.exports = PermissionSeeder
